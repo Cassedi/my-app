@@ -1,9 +1,13 @@
 .item {
-  color: greenyellow;
+  color: white;
 }
 
 .item img {
   height: 50px;
-  width: 50;
+  width: 50px;
   border-radius: 30px;
+}
+
+.item span {
+  color: blueviolet;
 }
