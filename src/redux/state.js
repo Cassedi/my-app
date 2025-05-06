@@ -7,7 +7,7 @@ let state = {
             {id: 4, message: "Ola-la-la", likesCount: "10"},
         ],
     },
-    messagesPage: {
+    dialogsPage: {
         dialogs: [
             {id: 1, name: "Dimych"},
             {id: 2, name: "Andrey"},
