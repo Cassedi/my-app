@@ -1,6 +1,6 @@
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import state, {addNewMessage, addPost, subscribe, updateNewMessageText, updateNewPostText} from "./redux/state";
+import store from "./redux/state";
 import ReactDOM from "react-dom/client";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
@@ -13,16 +13,14 @@ let rerenderEntireTree = (state) => {
         <React.StrictMode>
             <BrowserRouter>
                 <App state={state}
-                     addPost={addPost}
-                     updateNewPostText={updateNewPostText}
-                     addNewMessage={addNewMessage}
-                     updateNewMessageText={updateNewMessageText}/>
+                     dispatch={store.dispatch.bind(store)}/>
             </BrowserRouter>
         </React.StrictMode>
     );
 }
-rerenderEntireTree(state);
 
-subscribe(rerenderEntireTree);
+rerenderEntireTree(store.getState());
+
+store.subscribe(rerenderEntireTree);
 
 reportWebVitals();
